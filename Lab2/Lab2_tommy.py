@@ -1,4 +1,4 @@
 def func():
-	return "hej"
+	return "hej3"
 
 print(func())
