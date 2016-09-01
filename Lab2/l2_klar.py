@@ -1,15 +1,17 @@
-def pris(vikt, pklass):        
-        return float(vikt)*int(pklass)
+#porto-funktionen beräknar portot utifrån 4 prisklasser som beror på vikt
+def porto(vikt):
+    if vikt<2:
+        prisKlass=30
+    elif vikt < 6:
+        prisKlass=28
+    elif vikt < 12:
+        prisKlass=25
+    else:
+        prisKlass=23    
+    return float(vikt)*prisKlass
+
 print("*"*20, "Portokalkyl", "*"*20, "\n")
 print("Detta är ett program för att beräkna portokostnaden för paketförsändelser.\n")
 vikt=float(input("Ange paketets vikt i kilo:\n"))
-if vikt<2:
-        pklass=30
-elif vikt < 6:
-        pklass=28
-elif vikt < 12:
-        pklass=25
-else:
-        pklass=23
 
-print("\nPaketets porto blir %.2f kr" %pris(vikt, pklass))
+print("\nPaketets porto blir %.2f kr" %porto(vikt))
