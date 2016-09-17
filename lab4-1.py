@@ -1,4 +1,4 @@
-def filsökväg():
+def tal_av_fil():
     # Frågar användaren efter en sökväg och returnerar filen via variabeln fil
     while True:
         sökväg = input("Ange filnamn: ")
@@ -7,11 +7,13 @@ def filsökväg():
             break
         except:
             print("Filen "+sökväg+" kan inte hittas, försök igen!")
-    return(fil)
+    ls = []
+    for line in fil:
+        if not line.startswith("#"):
+            ls.append(int(line))
+    print("Laddade in ", len(ls), " tal.")
+    return(ls)
 
-textfil=filsökväg()
-ls = []
-for line in textfil:
-    if not line.startswith("#"):
-        ls.append(int(line))
-print (ls)
+
+
+print (tal_av_fil())

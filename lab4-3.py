@@ -1,6 +1,6 @@
 import math
 
-def standardavvikelse(data):
+def standardavvikelse(datapunkter):
     # Räknar ut standardavvikelsen av punkterna i listan data
     summa = 0
     for i in range(len(datapunkter)):
