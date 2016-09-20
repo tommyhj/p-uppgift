@@ -4,7 +4,7 @@ def medel(ls):
     for i in ls:
         summa += ls[j]
         j += 1
-    return summa / (j)
+    return summa / j
 
-lista = [1,4, 5, 6, 7, 55, 5]
+lista = [1, 4, 5, 6, 7, 55, 5]
 print(medel(lista))

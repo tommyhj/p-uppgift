@@ -11,7 +11,7 @@ def meny(alternativ):
     while True:
         try:
             menyval = input("Val:")
-            if int(menyval) > 0 and int(menyval) <= alternativ:
+            if 0 < int(menyval) <= alternativ:
                 break
             else:
                 print("Välj ett alternativ mellan 1 och ", alternativ)
@@ -37,8 +37,8 @@ def tal_av_fil():
         if not line.startswith("#"):
             ls.append(int(line))
     print("Laddade in ", len(ls), " tal.")
-    fil.close()
-    return(ls)
+    fil.close
+    return ls
 
 def medel(ls):
     # Returnerar medelvärdet av en lista utan att använda len eller sum
@@ -46,9 +46,11 @@ def medel(ls):
     for i in ls:
         summa += ls[j]
         j += 1
-    return summa / (j)
+    return summa / j
 
 import math
+
+
 def standardavvikelse(datapunkter):
     # Räknar ut standardavvikelsen av punkterna i listan data
     summa = 0
