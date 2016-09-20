@@ -30,7 +30,7 @@ def tal_av_fil():
         try:
             fil = open(sökväg, "r")
             break
-        except:
+        except FileNotFoundError:
             print("Filen "+sökväg+" kan inte hittas, försök igen!")
     ls = []
     for line in fil:
