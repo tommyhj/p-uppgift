@@ -37,6 +37,7 @@ def tal_av_fil():
         if not line.startswith("#"):
             ls.append(int(line))
     print("Laddade in ", len(ls), " tal.")
+    fil.close()
     return(ls)
 
 def medel(ls):
