@@ -73,3 +73,4 @@ while kör != alternativ:
             print("\nStandardavvikelsen är: ", standardavvikelse(tallista), end="\n\n")
         except NameError:
             print("\nDu måste välja en fil med tal innan du kan räkna ut standardavvikelsen", end="\n\n")
+
