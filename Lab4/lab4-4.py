@@ -1,5 +1,4 @@
-alternativ = 4
-kör = True
+import math
 
 
 def meny(alternativ):
@@ -9,7 +8,6 @@ def meny(alternativ):
     print("2. Beräkna medelvärdet")
     print("3. Beräkna standardavvikelsen")
     print("4. Avsluta")
-
     while True:
         try:
             menyval = input("Val:")
@@ -19,11 +17,7 @@ def meny(alternativ):
                 print("Välj ett alternativ mellan 1 och ", alternativ)
         except ValueError:
             print(menyval, " är inte ett tal")
-
-    if int(menyval) == alternativ:
-        return False
-    else:
-        return int(menyval)
+    return int(menyval)
 
 
 def tal_av_fil():
@@ -53,9 +47,6 @@ def medel(ls):
     return summa / j
 
 
-import math
-
-
 def standardavvikelse(datapunkter):
     # Räknar ut standardavvikelsen av punkterna i listan data
     summa = 0
@@ -64,7 +55,9 @@ def standardavvikelse(datapunkter):
     return math.sqrt((1 / (len(datapunkter) - 1)) * summa)
 
 
-while kör:
+alternativ = 4
+kör = 0
+while kör != alternativ:
     kör = meny(alternativ)
     if kör == 1:
         print("")
@@ -78,5 +71,5 @@ while kör:
     elif kör == 3:
         try:
             print("\nStandardavvikelsen är: ", standardavvikelse(tallista), end="\n\n")
-        except  NameError:
+        except NameError:
             print("\nDu måste välja en fil med tal innan du kan räkna ut standardavvikelsen", end="\n\n")
