@@ -64,7 +64,7 @@ def standardavvikelse(datapunkter):
     return math.sqrt((1 / (len(datapunkter) - 1)) * summa)
 
 
-while kör is not False:
+while kör:
     kör = meny(alternativ)
     if kör == 1:
         print("")
