@@ -1,7 +1,9 @@
 alternativ = 4
 kör = True
+
+
 def meny(alternativ):
-# Definierar menyalternativen och returnerar alternativet (men returnerar False om användaren väljer avsluta)
+    # Definierar menyalternativen och returnerar alternativet (men returnerar False om användaren väljer avsluta)
     print("Välj ett av följande:")
     print("1. Ladda in data")
     print("2. Beräkna medelvärdet")
@@ -23,6 +25,7 @@ def meny(alternativ):
     else:
         return int(menyval)
 
+
 def tal_av_fil():
     # Frågar användaren efter en sökväg och returnerar filens innehåll som en lista
     while True:
@@ -31,7 +34,7 @@ def tal_av_fil():
             fil = open(sökväg, "r")
             break
         except FileNotFoundError:
-            print("Filen "+sökväg+" kan inte hittas, försök igen!")
+            print("Filen " + sökväg + " kan inte hittas, försök igen!")
     ls = []
     for line in fil:
         if not line.startswith("#"):
@@ -40,13 +43,15 @@ def tal_av_fil():
     fil.close()
     return ls
 
+
 def medel(ls):
     # Returnerar medelvärdet av en lista utan att använda len eller sum
     summa, j = 0, 0
     for i in ls:
-        summa += ls[j]
+        summa += i
         j += 1
     return summa / j
+
 
 import math
 
@@ -56,21 +61,22 @@ def standardavvikelse(datapunkter):
     summa = 0
     for i in range(len(datapunkter)):
         summa += math.pow((datapunkter[i] - (sum(datapunkter) / len(datapunkter))), 2)
-    return math.sqrt( (1/(len(datapunkter)-1) )*summa)
+    return math.sqrt((1 / (len(datapunkter) - 1)) * summa)
+
 
 while kör is not False:
     kör = meny(alternativ)
     if kör == 1:
         print("")
-        tallista=tal_av_fil()
+        tallista = tal_av_fil()
         print("")
     elif kör == 2:
         try:
             print("\nMedelvärdet är: ", medel(tallista), end="\n\n")
-        except:
+        except NameError:
             print("\nDu måste välja en fil med tal innan du kan räkna ut medelvärdet", end="\n\n")
     elif kör == 3:
         try:
             print("\nStandardavvikelsen är: ", standardavvikelse(tallista), end="\n\n")
-        except:
-            print("\nDu måste välja en fil med tal innan du kan räkna ut medelvärdet", end="\n\n")
+        except  NameError:
+            print("\nDu måste välja en fil med tal innan du kan räkna ut standardavvikelsen", end="\n\n")
