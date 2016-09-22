@@ -2,7 +2,7 @@ def medel(ls):
     # Returnerar medelvärdet av en lista utan att använda len eller sum
     summa, j = 0, 0
     for i in ls:
-        summa += ls[j]
+        summa += i
         j += 1
     return summa / j
 

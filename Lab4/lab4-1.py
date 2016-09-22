@@ -13,6 +13,6 @@ def tal_av_fil():
             ls.append(int(line))
     fil.close()
     print("Laddade in ", len(ls), " tal.")
-    return(ls)
+    return ls
 
 print (tal_av_fil())
