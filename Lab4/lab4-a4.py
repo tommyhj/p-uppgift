@@ -2,9 +2,11 @@ from math import sqrt
 
 def calculate_mean_value_with_loop(number_list):
 	total = 0
+	number_of_numbers = 0
 	for number in number_list:
 		total += number
-	return total/len(number_list)
+		number_of_numbers +=1
+	return total/number_of_numbers
 
 def calculate_standard_deviation(number_list):
 	mean_value = calculate_mean_value_with_loop(number_list)
@@ -18,6 +20,8 @@ def read_lines_from_file(file_name):
 	text_file = open(file_name, "r")
 	all_rows = text_file.readlines()
 	actual_rows_without_comments = []
+	text_file.close()
+
 	for row in all_rows:
 
 		if not row.startswith("#"):
