@@ -24,7 +24,7 @@ def meny(alternativ):
         return int(menyval)
 
 def tal_av_fil():
-    # Frågar användaren efter en sökväg och returnerar filen via variabeln fil
+    # Frågar användaren efter en sökväg och returnerar filens innehåll som en lista
     while True:
         sökväg = input("Ange filnamn: ")
         try:
@@ -37,7 +37,7 @@ def tal_av_fil():
         if not line.startswith("#"):
             ls.append(int(line))
     print("Laddade in ", len(ls), " tal.")
-    fil.close
+    fil.close()
     return ls
 
 def medel(ls):
