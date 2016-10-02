@@ -1,25 +1,5 @@
+from frans_tv import TV 
 import os
-
-
-
-class TV(object):
-
-	def __init__(self, volume, channel, channels):
-		self.volume = volume
-		self.channel = channels[channel-1]
-
-	def set_channel(self, channel):
-		self.channel = channel
-
-	def get_channel(self):
-		return self.channel
-
-	def set_volume(self, volume):
-		self.volume = volume
-	
-	def get_volume(self):
-		return self.volume
-
 
 
 def find_file(file_name, file_path):
@@ -39,24 +19,26 @@ def user_input_int_handler(prompt, upper_lim, lower_lim):
 			print("Detta är inget heltal, försök igen: ")
 
 def tv_control(name, tv, channels):
-	print(name)
-	print("Tv-program:", tv.get_channel().split(':')[0])
-	print("Kanal: ", tv.get_channel().split(':')[1])
-	print("Ljudvolym: ", tv.get_volume())
-	print("1. Byt kanal")
-	print("2. Sänk ljudvolym")
-	print("3. Höj ljudvolym")
-	print("4. Gå till huvudmenyn")
-	menu_choice = user_input_int_handler("Välj: ", 1, 4)
+	running = True
+	while running:
+		print(name)
+		print("Tv-program:", tv.get_channel().split(':')[1], end="")
+		print("Kanal: ", tv.get_channel().split(':')[0])
+		print("Ljudvolym: ", tv.get_volume())
+		print("1. Byt kanal")
+		print("2. Sänk ljudvolym")
+		print("3. Höj ljudvolym")
+		print("4. Gå till huvudmenyn")
+		menu_choice = user_input_int_handler("Välj: ", 1, 4)
 
-	if menu_choice == 1:
-		channel_control(tv, channels)
-	elif menu_choice == 2:
-		lower_volume(tv)
-	elif menu_choice == 3:
-		raise_volume(tv)
-	elif menu_choice == 4:
-		return
+		if menu_choice == 1:
+			channel_control(tv, channels)
+		elif menu_choice == 2:
+			lower_volume(tv)
+		elif menu_choice == 3:
+			raise_volume(tv)
+		elif menu_choice == 4:
+			running = False
 
 def raise_volume(tv):
 	if tv.get_volume() == 10:
@@ -85,6 +67,20 @@ def save_to_file(tv_1, tv_2):
 	file.write(tv_1_str + tv_2_str)
 	file.close()	
 
+def read_tv_file(tv_list):
+	file = open("tv.txt", "r")
+	lines = file.readlines()
+	file.close()
+
+	tv_list_counter = -1
+	for line in lines:
+		if "#" in line:
+			tv_list_counter +=1
+		elif line.startswith("!"):
+			tv_list[tv_list_counter].set_channel(line.split("!")[1])
+		elif line.startswith("?"):
+			tv_list[tv_list_counter].set_volume(int(line.split("?")[1]))
+
 def tv_simulator():
 	
 	channels = ["MTv: Music is life", "Tv 3: Har du tur i kärlek?","Svt 1: Pengar är inte allt","Kanal 4: Vem vill inte bli miljonär?"]
@@ -94,21 +90,8 @@ def tv_simulator():
 		tv_1 = TV(1,1,channels)
 		tv_2 = TV(1,1,channels)
 	else:
-		file = open("tv.txt", "r")
-		lines = file.readlines()
-		file.close()
-
 		tv_list = [tv_1, tv_2]
-		tv_list_counter = -1
-		for line in lines:
-			if "#" in line:
-				tv_list_counter +=1
-			elif line.startswith("!"):
-				tv_list[tv_list_counter].set_channel(line.split("!")[1])
-			elif line.startswith("?"):
-				print (line)
-				tv_list[tv_list_counter].set_volume(int(line.split("?")[1]))
-			
+		read_tv_file(tv_list)
 
 
 	running = True
