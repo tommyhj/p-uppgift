@@ -19,7 +19,7 @@ Tyvärr kunde sällskapet inte få 5 sammanhängande platser, men med hjälp av 
 Kunden får en utskrift med resehandlingar för samtliga resenärer, och uppgift om den summa som ska betalas kontant till tågvärden.
 
 ### Avbokning
-En kund väljer att ställa in sin resa och kontaktar resesäljaren. Med hjälp av bokningsnumret kan säljaren omedelbart söka upp vilken bokning det handlar om och avbeställa den. Saknas bokningsnumer så kan bokningen även letas upp utifrån passagerarens namn.
+En kund väljer att ställa in sin resa och kontaktar resesäljaren. Med hjälp av bokningshistoriken kan säljaren enkelt hitta igen bokningen och ta bort en.
 
 ## Kodskelett
 
