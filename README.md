@@ -3,7 +3,7 @@
 ## Programmets syfte
 
 Platsbokningsprogrammet är en specialskriven applikation för att hantera biljettbokningen på inlandsbanan, för SJs centralstation i Jokkmokk. 
-Programmet används via ett grafiskt användargränssnitt, som ger användaren möjlighet att söka efter tillgängliga platser i andra respektive tredje klass på samtliga tåg som passerar Jokkmokks centralstation samt boka dessa. Det ska vara möjligt att boka gruppresor, där samtliga i sällskapet placeras så nära varandra som möjligt. Det ska även vara möjligt att utöka bokningssystemet med fler tåglinjer genom att lägga till nya tidtabeller.
+Programmet används via ett grafiskt användargränssnitt, som ger användaren möjlighet att söka efter tillgängliga platser på samtliga tåg som passerar Jokkmokks centralstation samt boka dessa. Det ska vara möjligt att boka gruppresor, där samtliga i sällskapet placeras så nära varandra som möjligt. Det ska även vara möjligt att utöka bokningssystemet med fler tåglinjer genom att lägga till nya tidtabeller.
 
 Programmet ska även kunna skriva ut resehandlingar, med bokningsnummer, destination och avgångstid. Användaren ska även kunna visa och avboka resor som denne själv lagt in, samt skriva ut resehandlingar för tidigare bokningar.
 
