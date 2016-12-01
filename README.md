@@ -7,7 +7,7 @@ Programmet används via ett grafiskt användargränssnitt, som ger användaren m
 
 Programmet ska även kunna skriva ut resehandlingar, med platsnummer, destination och avgångstid. Användaren ska även kunna visa och avboka resor som denne själv lagt in, samt skriva ut resehandlingar för tidigare bokningar.
 
-Den största svårigheten i skapandet av programmet kommer vara det grafiska användargränssnittet. Programmet kommer därför att skrivas med utgångpunkt i att det enkelt ska kunna anpassas för att användas via konsollen.
+Den största svårigheten i skapandet av programmet kommer vara det grafiska användargränssnittet. Risken är att det grafiska användargränssnittet kommer att ta för lång tid att skapa. Ett särskilt svårt problem den grafiska presentationen av tillgängliga och bokade platser på ett sätt som fungerar för alla olika storlekar av tågvagnar. Av den anledningen kommer programmet att skrivas med utgångspunkten att det enkelt ska kunna anpassas till ett textbaserat gränssnitt om tiden inte räcker till för ett grafiskt användargränssnitt.
 
 ## Användarscenarier
 
